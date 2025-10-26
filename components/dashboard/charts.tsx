@@ -81,17 +81,18 @@ export function RevenueChart() {
             <XAxis
               dataKey="month"
               className="text-xs"
-              tick={{ fill: "hsl(var(--muted-foreground))" }}
+              tick={{ fill: "hsl(var(--color-muted-foreground))" }}
             />
             <YAxis
               className="text-xs"
-              tick={{ fill: "hsl(var(--muted-foreground))" }}
+              tick={{ fill: "hsl(var(--color-muted-foreground))" }}
             />
             <Tooltip
               contentStyle={{
-                backgroundColor: "hsl(var(--popover))",
-                border: "1px solid hsl(var(--border))",
-                borderRadius: "var(--radius)",
+                backgroundColor: "hsl(var(--color-popover))",
+                border: "1px solid hsl(var(--color-border))",
+                borderRadius: "var(--radius-lg)",
+                color: "hsl(var(--color-popover-foreground))",
               }}
             />
             <Legend />
@@ -144,9 +145,10 @@ export function CategoryChart() {
             </Pie>
             <Tooltip
               contentStyle={{
-                backgroundColor: "hsl(var(--popover))",
-                border: "1px solid hsl(var(--border))",
-                borderRadius: "var(--radius)",
+                backgroundColor: "hsl(var(--color-popover))",
+                border: "1px solid hsl(var(--color-border))",
+                borderRadius: "var(--radius-lg)",
+                color: "hsl(var(--color-popover-foreground))",
               }}
             />
           </PieChart>
@@ -170,17 +172,18 @@ export function UserGrowthChart() {
             <XAxis
               dataKey="month"
               className="text-xs"
-              tick={{ fill: "hsl(var(--muted-foreground))" }}
+              tick={{ fill: "hsl(var(--color-muted-foreground))" }}
             />
             <YAxis
               className="text-xs"
-              tick={{ fill: "hsl(var(--muted-foreground))" }}
+              tick={{ fill: "hsl(var(--color-muted-foreground))" }}
             />
             <Tooltip
               contentStyle={{
-                backgroundColor: "hsl(var(--popover))",
-                border: "1px solid hsl(var(--border))",
-                borderRadius: "var(--radius)",
+                backgroundColor: "hsl(var(--color-popover))",
+                border: "1px solid hsl(var(--color-border))",
+                borderRadius: "var(--radius-lg)",
+                color: "hsl(var(--color-popover-foreground))",
               }}
             />
             <Legend />
@@ -213,17 +216,18 @@ export function SalesBarChart() {
             <XAxis
               dataKey="month"
               className="text-xs"
-              tick={{ fill: "hsl(var(--muted-foreground))" }}
+              tick={{ fill: "hsl(var(--color-muted-foreground))" }}
             />
             <YAxis
               className="text-xs"
-              tick={{ fill: "hsl(var(--muted-foreground))" }}
+              tick={{ fill: "hsl(var(--color-muted-foreground))" }}
             />
             <Tooltip
               contentStyle={{
-                backgroundColor: "hsl(var(--popover))",
-                border: "1px solid hsl(var(--border))",
-                borderRadius: "var(--radius)",
+                backgroundColor: "hsl(var(--color-popover))",
+                border: "1px solid hsl(var(--color-border))",
+                borderRadius: "var(--radius-lg)",
+                color: "hsl(var(--color-popover-foreground))",
               }}
             />
             <Legend />

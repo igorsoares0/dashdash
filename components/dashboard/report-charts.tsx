@@ -83,6 +83,7 @@ export function SalesByRegionChart() {
                 backgroundColor: "hsl(var(--color-popover))",
                 border: "1px solid hsl(var(--color-border))",
                 borderRadius: "var(--radius-lg)",
+                color: "hsl(var(--color-popover-foreground))",
               }}
             />
             <Legend />
@@ -123,6 +124,7 @@ export function PerformanceRadarChart() {
                 backgroundColor: "hsl(var(--color-popover))",
                 border: "1px solid hsl(var(--color-border))",
                 borderRadius: "var(--radius-lg)",
+                color: "hsl(var(--color-popover-foreground))",
               }}
             />
           </RadarChart>
@@ -164,6 +166,7 @@ export function RevenueByProductChart() {
                 backgroundColor: "hsl(var(--color-popover))",
                 border: "1px solid hsl(var(--color-border))",
                 borderRadius: "var(--radius-lg)",
+                color: "hsl(var(--color-popover-foreground))",
               }}
             />
             <Legend />
@@ -216,6 +219,7 @@ export function CustomerAcquisitionChart() {
                 backgroundColor: "hsl(var(--color-popover))",
                 border: "1px solid hsl(var(--color-border))",
                 borderRadius: "var(--radius-lg)",
+                color: "hsl(var(--color-popover-foreground))",
               }}
             />
             <Legend />
