@@ -2,7 +2,7 @@
 
 import { DataTable } from "@/components/dashboard/data-table"
 import { transactionColumns } from "@/components/dashboard/transaction-columns"
-import { generateTransactions } from "@/lib/data"
+import { getTransactions } from "@/lib/mock-data"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { StatsCard } from "@/components/dashboard/stats-cards"
 import { DollarSign, TrendingUp, TrendingDown, Activity, Download, Filter } from "lucide-react"
@@ -17,7 +17,7 @@ import {
 } from "@/components/ui/select"
 
 export default function TransactionsPage() {
-  const allTransactions = generateTransactions(300)
+  const allTransactions = getTransactions()
 
   // Calculate stats
   const completedTransactions = allTransactions.filter(t => t.status === "completed")
@@ -38,19 +38,19 @@ export default function TransactionsPage() {
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+      <div className="flex flex-col gap-4">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">Transactions</h1>
-          <p className="text-muted-foreground">
+          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">Transactions</h1>
+          <p className="text-sm sm:text-base text-muted-foreground">
             Track and manage all financial transactions
           </p>
         </div>
-        <div className="flex gap-2">
-          <Button variant="outline">
+        <div className="flex flex-col sm:flex-row gap-2">
+          <Button variant="outline" className="w-full sm:w-auto">
             <Filter className="mr-2 h-4 w-4" />
             Filter
           </Button>
-          <Button>
+          <Button className="w-full sm:w-auto">
             <Download className="mr-2 h-4 w-4" />
             Export
           </Button>

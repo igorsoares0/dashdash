@@ -46,13 +46,14 @@ export const userColumns: ColumnDef<User>[] = [
         <Button
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+          className="hidden sm:flex"
         >
           ID
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
       )
     },
-    cell: ({ row }) => <div className="font-medium">{row.getValue("id")}</div>,
+    cell: ({ row }) => <div className="hidden sm:block font-medium">{row.getValue("id")}</div>,
   },
   {
     accessorKey: "name",
@@ -76,21 +77,22 @@ export const userColumns: ColumnDef<User>[] = [
         <Button
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+          className="hidden md:flex"
         >
           Email
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
       )
     },
-    cell: ({ row }) => <div className="lowercase">{row.getValue("email")}</div>,
+    cell: ({ row }) => <div className="hidden md:block lowercase">{row.getValue("email")}</div>,
   },
   {
     accessorKey: "role",
-    header: "Role",
+    header: () => <div className="hidden lg:block">Role</div>,
     cell: ({ row }) => {
       const role = row.getValue("role") as string
       return (
-        <Badge variant={role === "admin" ? "default" : "secondary"}>
+        <Badge variant={role === "admin" ? "default" : "secondary"} className="hidden lg:inline-flex">
           {role}
         </Badge>
       )
@@ -123,6 +125,7 @@ export const userColumns: ColumnDef<User>[] = [
         <Button
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+          className="hidden md:flex"
         >
           Revenue
           <ArrowUpDown className="ml-2 h-4 w-4" />
@@ -135,7 +138,7 @@ export const userColumns: ColumnDef<User>[] = [
         style: "currency",
         currency: "USD",
       }).format(amount)
-      return <div className="font-medium">{formatted}</div>
+      return <div className="hidden md:block font-medium">{formatted}</div>
     },
   },
   {
@@ -145,6 +148,7 @@ export const userColumns: ColumnDef<User>[] = [
         <Button
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+          className="hidden lg:flex"
         >
           Created At
           <ArrowUpDown className="ml-2 h-4 w-4" />
@@ -152,7 +156,7 @@ export const userColumns: ColumnDef<User>[] = [
       )
     },
     cell: ({ row }) => {
-      return format(new Date(row.getValue("createdAt")), "MMM dd, yyyy")
+      return <div className="hidden lg:block">{format(new Date(row.getValue("createdAt")), "MMM dd, yyyy")}</div>
     },
   },
   {

@@ -2,24 +2,24 @@
 
 import { DataTable } from "@/components/dashboard/data-table"
 import { userColumns } from "@/components/dashboard/user-columns"
-import { generateUsers } from "@/lib/data"
+import { getUsers } from "@/lib/mock-data"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Plus } from "lucide-react"
 
 export default function UsersPage() {
-  const users = generateUsers(100)
+  const users = getUsers()
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">Users</h1>
-          <p className="text-muted-foreground">
+          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">Users</h1>
+          <p className="text-sm sm:text-base text-muted-foreground">
             Manage your users and their permissions
           </p>
         </div>
-        <Button>
+        <Button className="w-full sm:w-auto">
           <Plus className="mr-2 h-4 w-4" />
           Add User
         </Button>

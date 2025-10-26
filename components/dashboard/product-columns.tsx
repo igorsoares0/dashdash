@@ -45,13 +45,14 @@ export const productColumns: ColumnDef<Product>[] = [
         <Button
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+          className="hidden sm:flex"
         >
           ID
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
       )
     },
-    cell: ({ row }) => <div className="font-medium">{row.getValue("id")}</div>,
+    cell: ({ row }) => <div className="hidden sm:block font-medium">{row.getValue("id")}</div>,
   },
   {
     accessorKey: "name",
@@ -70,9 +71,9 @@ export const productColumns: ColumnDef<Product>[] = [
   },
   {
     accessorKey: "category",
-    header: "Category",
+    header: () => <div className="hidden md:block">Category</div>,
     cell: ({ row }) => {
-      return <Badge variant="outline">{row.getValue("category")}</Badge>
+      return <Badge variant="outline" className="hidden md:inline-flex">{row.getValue("category")}</Badge>
     },
   },
   {
@@ -104,13 +105,14 @@ export const productColumns: ColumnDef<Product>[] = [
         <Button
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+          className="hidden lg:flex"
         >
           Stock
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
       )
     },
-    cell: ({ row }) => <div>{row.getValue("stock")}</div>,
+    cell: ({ row }) => <div className="hidden lg:block">{row.getValue("stock")}</div>,
   },
   {
     accessorKey: "status",
@@ -139,13 +141,14 @@ export const productColumns: ColumnDef<Product>[] = [
         <Button
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+          className="hidden xl:flex"
         >
           Sales
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
       )
     },
-    cell: ({ row }) => <div>{row.getValue("sales")}</div>,
+    cell: ({ row }) => <div className="hidden xl:block">{row.getValue("sales")}</div>,
   },
   {
     id: "actions",

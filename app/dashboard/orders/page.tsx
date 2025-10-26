@@ -2,13 +2,13 @@
 
 import { DataTable } from "@/components/dashboard/data-table"
 import { orderColumns } from "@/components/dashboard/order-columns"
-import { generateOrders } from "@/lib/data"
+import { getOrders } from "@/lib/mock-data"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { StatsCard } from "@/components/dashboard/stats-cards"
 import { ShoppingCart, Clock, CheckCircle, XCircle } from "lucide-react"
 
 export default function OrdersPage() {
-  const orders = generateOrders(200)
+  const orders = getOrders()
 
   const pendingOrders = orders.filter(o => o.status === "pending").length
   const processingOrders = orders.filter(o => o.status === "processing").length
@@ -17,13 +17,11 @@ export default function OrdersPage() {
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="flex items-center justify-between">
-        <div>
-          <h1 className="text-3xl font-bold tracking-tight">Orders</h1>
-          <p className="text-muted-foreground">
-            Manage and track all customer orders
-          </p>
-        </div>
+      <div className="flex flex-col gap-2">
+        <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">Orders</h1>
+        <p className="text-sm sm:text-base text-muted-foreground">
+          Manage and track all customer orders
+        </p>
       </div>
 
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">

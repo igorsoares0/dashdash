@@ -46,13 +46,14 @@ export const orderColumns: ColumnDef<Order>[] = [
         <Button
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+          className="hidden sm:flex"
         >
           Order ID
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
       )
     },
-    cell: ({ row }) => <div className="font-medium">{row.getValue("id")}</div>,
+    cell: ({ row }) => <div className="hidden sm:block font-medium">{row.getValue("id")}</div>,
   },
   {
     accessorKey: "customer",
@@ -71,8 +72,8 @@ export const orderColumns: ColumnDef<Order>[] = [
   },
   {
     accessorKey: "product",
-    header: "Product",
-    cell: ({ row }) => <div>{row.getValue("product")}</div>,
+    header: () => <div className="hidden md:block">Product</div>,
+    cell: ({ row }) => <div className="hidden md:block">{row.getValue("product")}</div>,
   },
   {
     accessorKey: "amount",
@@ -125,6 +126,7 @@ export const orderColumns: ColumnDef<Order>[] = [
         <Button
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+          className="hidden lg:flex"
         >
           Date
           <ArrowUpDown className="ml-2 h-4 w-4" />
@@ -132,7 +134,7 @@ export const orderColumns: ColumnDef<Order>[] = [
       )
     },
     cell: ({ row }) => {
-      return format(new Date(row.getValue("date")), "MMM dd, yyyy")
+      return <div className="hidden lg:block">{format(new Date(row.getValue("date")), "MMM dd, yyyy")}</div>
     },
   },
   {

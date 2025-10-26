@@ -97,9 +97,9 @@ export const transactionColumns: ColumnDef<Transaction>[] = [
     cell: ({ row }) => {
       const transaction = row.original
       return (
-        <div className="flex flex-col">
+        <div className="flex flex-col min-w-[150px]">
           <div className="font-medium">{transaction.user}</div>
-          <div className="text-xs text-muted-foreground">{transaction.email}</div>
+          <div className="text-xs text-muted-foreground hidden sm:block">{transaction.email}</div>
         </div>
       )
     },
@@ -118,11 +118,11 @@ export const transactionColumns: ColumnDef<Transaction>[] = [
   },
   {
     accessorKey: "method",
-    header: "Method",
+    header: () => <div className="hidden md:block">Method</div>,
     cell: ({ row }) => {
       const method = row.getValue("method") as Transaction["method"]
       return (
-        <Badge variant="secondary" className="font-normal">
+        <Badge variant="secondary" className="hidden md:inline-flex font-normal">
           {getMethodBadge(method)}
         </Badge>
       )
@@ -184,10 +184,10 @@ export const transactionColumns: ColumnDef<Transaction>[] = [
   },
   {
     accessorKey: "description",
-    header: "Description",
+    header: () => <div className="hidden lg:block">Description</div>,
     cell: ({ row }) => {
       return (
-        <div className="max-w-[200px] truncate text-sm text-muted-foreground">
+        <div className="hidden lg:block max-w-[200px] truncate text-sm text-muted-foreground">
           {row.getValue("description")}
         </div>
       )
@@ -200,6 +200,7 @@ export const transactionColumns: ColumnDef<Transaction>[] = [
         <Button
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+          className="hidden xl:flex"
         >
           Date
           <ArrowUpDown className="ml-2 h-4 w-4" />
@@ -208,7 +209,7 @@ export const transactionColumns: ColumnDef<Transaction>[] = [
     },
     cell: ({ row }) => {
       return (
-        <div className="flex flex-col">
+        <div className="hidden xl:flex flex-col">
           <div className="font-medium">
             {format(new Date(row.getValue("date")), "MMM dd, yyyy")}
           </div>
