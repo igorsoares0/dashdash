@@ -66,3 +66,12 @@ body {
   background-color: hsl(var(--color-background));
   color: hsl(var(--color-foreground));
 }
+
+/* Custom class for solid sheet background */
+.sheet-solid-bg {
+  background-color: white !important;
+}
+
+.dark .sheet-solid-bg {
+  background-color: hsl(var(--color-background)) !important;
+}

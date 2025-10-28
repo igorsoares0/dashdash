@@ -84,12 +84,15 @@ export function Header() {
             <span className="sr-only">Toggle navigation menu</span>
           </Button>
         </SheetTrigger>
-        <SheetContent side="left" className="flex flex-col">
+        <SheetContent 
+          side="left" 
+          className="flex flex-col border-border shadow-xl sheet-solid-bg"
+        >
           <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
           <nav className="grid gap-2 text-lg font-medium">
             <Link
               href="/dashboard"
-              className="flex items-center gap-2 text-lg font-semibold mb-4"
+              className="flex items-center gap-2 text-lg font-semibold mb-4 text-foreground border-b border-border pb-4"
             >
               <LayoutDashboard className="h-6 w-6" />
               <span>Dashboard</span>
@@ -99,9 +102,9 @@ export function Header() {
                 key={route.href}
                 href={route.href}
                 className={cn(
-                  "flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary",
+                  "flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary hover:bg-muted/50 border border-transparent hover:border-border/50",
                   pathname === route.href
-                    ? "bg-muted text-primary"
+                    ? "bg-muted text-primary border-border/50"
                     : "transparent"
                 )}
               >
