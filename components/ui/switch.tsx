@@ -11,7 +11,14 @@ const Switch = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <SwitchPrimitives.Root
     className={cn(
-      "peer inline-flex h-5 w-9 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=unchecked]:bg-input",
+      "peer inline-flex h-[28px] w-[52px] shrink-0 cursor-pointer items-center rounded-full border-2 transition-all duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50",
+      "data-[state=checked]:bg-gradient-to-r data-[state=checked]:from-blue-500 data-[state=checked]:to-blue-600 data-[state=checked]:border-transparent",
+      "dark:data-[state=checked]:from-blue-500 dark:data-[state=checked]:to-blue-600",
+      "data-[state=unchecked]:bg-slate-200 data-[state=unchecked]:border-slate-300",
+      "dark:data-[state=unchecked]:bg-slate-700 dark:data-[state=unchecked]:border-slate-600",
+      "hover:data-[state=checked]:from-blue-600 hover:data-[state=checked]:to-blue-700",
+      "hover:data-[state=unchecked]:bg-slate-300 hover:data-[state=unchecked]:border-slate-400",
+      "dark:hover:data-[state=unchecked]:bg-slate-600 dark:hover:data-[state=unchecked]:border-slate-500",
       className
     )}
     {...props}
@@ -19,7 +26,11 @@ const Switch = React.forwardRef<
   >
     <SwitchPrimitives.Thumb
       className={cn(
-        "pointer-events-none block h-4 w-4 rounded-full bg-background shadow-lg ring-0 transition-transform data-[state=checked]:translate-x-4 data-[state=unchecked]:translate-x-0"
+        "pointer-events-none block h-[22px] w-[22px] rounded-full shadow-lg ring-0 transition-all duration-300 ease-in-out",
+        "data-[state=checked]:translate-x-[26px] data-[state=unchecked]:translate-x-[2px]",
+        "data-[state=checked]:bg-white data-[state=checked]:shadow-[0_2px_8px_rgba(59,130,246,0.5)]",
+        "data-[state=unchecked]:bg-white data-[state=unchecked]:shadow-[0_1px_3px_rgba(0,0,0,0.2)]",
+        "dark:data-[state=unchecked]:bg-slate-400 dark:data-[state=unchecked]:shadow-[0_2px_4px_rgba(0,0,0,0.6)]"
       )}
     />
   </SwitchPrimitives.Root>
